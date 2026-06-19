@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.signupPageBody{
+/*background-color: rgb(245, 234, 208);*/
+background-color: #ffe3e3;
+}
+
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 10%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 275px;
+
+}
+
+.signupFormTag{
+     border: 2px solid black;
+}
+
+.signupFormTitle{
+    text-align: center;
+    padding: 10px;
+}
+
+.newInputCon{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.submitNewDataCon{
+    text-align: center;
+    padding: 10px;
+}
+
+
+/*MEDIA QUERIES*/
+@media (min-width:320px) and (max-width:339px) {
+    .signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 55%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+}
+}
+
+@media (min-width:340px) and (max-width:369px) {
+   .signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 55%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+}
+}
+
+@media (min-width: 370px) and (max-width:387px) {
+   .signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 55%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+} 
+}
+
+@media (min-width: 388px) and (max-width:399px) {
+   .signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 55%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+} 
+}
+
+@media (min-width: 400px) and (max-width:425px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 55%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+}
+}
+
+@media (min-width: 426px) and (max-width:475px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 51%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+}
+}
+
+@media (min-width: 476px) and (max-width:550px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 46%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+} 
+}
+
+@media (min-width: 551px) and (max-width: 625px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 46%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+}  
+}
+
+@media (min-width: 626px) and (max-width: 655px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 37%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+}  
+}
+
+@media (min-width: 656px) and (max-width: 725px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 37%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+} 
+}
+
+@media (min-width: 726px) and (max-width: 825px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 35%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+}  
+}
+
+@media (min-width: 826px) and (max-width: 903px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 30%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+} 
+}
+
+@media (min-width: 904px) and (max-width: 1024px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 30%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+} 
+}
+
+@media (min-width: 1025px) and (max-width: 1145px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 20%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+} 
+}
+
+@media (min-width: 1146px) and (max-width: 1300px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 20%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+}
+}
+
+@media (min-width: 1301px) {
+.signupFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 15%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.signupFormTag{
+    border: 2px solid black;
+    width: 275px; 
+}
+}
+
+/*MEDIA QUERIES*/

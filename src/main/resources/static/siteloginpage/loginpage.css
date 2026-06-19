@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.loginPageBody{
+background-color: rgb(245, 234, 208);
+   /*background-color: #ffe3e3;*/
+}
+
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 10%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+}
+
+.loginFormTitle{
+    text-align: center;
+}
+
+.inputCon{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.submitDataCon{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.signUpLinkCon{
+    text-align: center;
+    padding-top: 10px;
+}
+
+/*MEDIA QUERIES*/
+@media (min-width:320px) and (max-width:339px) {
+    .loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+}
+}
+
+@media (min-width:340px) and (max-width:369px) {
+      .loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+}
+}
+
+@media (min-width: 370px) and (max-width:387px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+}
+}
+
+@media (min-width: 388px) and (max-width:399px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+}  
+}
+
+@media (min-width: 400px) and (max-width:425px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+}  
+}
+
+@media (min-width: 426px) and (max-width:475px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+}  
+}
+
+@media (min-width: 476px) and (max-width:550px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+}  
+}
+
+@media (min-width: 551px) and (max-width: 625px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+}  
+}
+
+@media (min-width: 626px) and (max-width: 655px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 40%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+}  
+}
+
+@media (min-width: 656px) and (max-width: 725px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 40%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+} 
+}
+
+@media (min-width: 726px) and (max-width: 825px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 30%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+} 
+}
+
+@media (min-width: 826px) and (max-width: 903px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 30%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+} 
+}
+
+@media (min-width: 904px) and (max-width: 1024px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 30%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+} 
+}
+
+@media (min-width: 1025px) and (max-width: 1145px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 20%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+} 
+}
+
+@media (min-width: 1146px) and (max-width: 1300px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 20%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+} 
+}
+
+@media (min-width: 1301px) {
+.loginFormCon{
+    display: flex;
+    margin: auto;
+    margin-top: 15%;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    height: 200px;
+
+} 
+}
+/*MEDIA QUERIES*/

@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*NAVBAR*/
+nav{
+    position: fixed;
+    width: 100%;
+    background: #a2d2df;
+    top: 0%;
+    height:68px;
+    border-bottom: #ffe3e3 2px solid;
+}
+.navLogoCon{
+    margin-top: .1%;
+    margin-left: 2%;
+    float: left;
+}
+
+.logoImgDiv{
+    width: 65px; /* or whatever size you want */
+    height: 65px;
+    background-size: contain;       /* or 'contain' depending on what you want */
+    background-position: center;  /* centers the image */
+    background-repeat: no-repeat;
+    background-image: url("../navImages2/showerheadlogo.jpeg"); 
+}
+
+.homepageCon{
+    margin-top: .9%;
+    margin-left: 1%;
+    padding: 10px;
+    /*border: 2px solid black;*/
+    width: 50px;
+    float: left;
+}
+
+.homepageButtonA{
+    text-decoration: none;
+}
+
+.homepageButtonP{
+    color: #3e5161;
+}
+
+.homepageButtonP:hover{
+    color: #ffe3e3;
+}
+
+.productPageCon{
+    margin-top: .9%;
+    margin-left: 3%;
+    padding: 10px;
+    /*border: 2px solid black;*/
+    width: 125px;
+    float: left;
+}
+
+.productPageButtonA{
+    text-decoration: none;
+}
+
+.productPageButtonP{
+    color: #3e5161;
+    
+}
+
+.productPageButtonP:hover{
+    color: #ffe3e3;
+}
+
+.ordersCon{
+    margin-top: 1.5%;
+    margin-right: 8%;
+    padding: 1px;
+    float: right;
+}
+
+.ordersButtonA{
+    text-decoration: none;
+}
+
+.ordersButtonP{
+    color: #3e5161;
+}
+
+.ordersButtonP:hover{
+    color: #ffe3e3;
+}
+
+/*NAVBAR*/
