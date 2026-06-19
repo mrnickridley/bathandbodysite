@@ -1,9 +1,20 @@
 package ridspa.ridspa;
 
+import java.io.IOException;
+
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 
 @Configuration
@@ -27,5 +38,29 @@ public class configuration{
         };
 }
 
+
+  @Bean
+    public FilterRegistrationBean<Filter> cspHeaderFilter() {
+        FilterRegistrationBean<Filter> registration = new FilterRegistrationBean<>();
+        registration.setFilter(new Filter() {
+            @Override
+            public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+                if (response instanceof HttpServletResponse) {
+                    HttpServletResponse httpResp = (HttpServletResponse) response;
+                    // Temporary CSP to allow PayPal SDK scripts to run.
+                    // Remove 'unsafe-eval' once you confirm the SDK no longer needs it.
+                    String csp = "default-src 'self'; " +
+                            "script-src 'self' https://www.paypal.com https://www.paypalobjects.com https://static.cloudflareinsights.com 'unsafe-eval'; " +
+                            "connect-src 'self' https://api-m.paypal.com https://api-m.sandbox.paypal.com https://static.cloudflareinsights.com; " +
+                            "style-src 'self' 'unsafe-inline'; " +
+                            "img-src 'self' data: https://www.paypalobjects.com;";
+                    httpResp.setHeader("Content-Security-Policy", csp);
+                }
+                chain.doFilter(request, response);
+            }
+        });
+        registration.setOrder(Ordered.HIGHEST_PRECEDENCE);
+        return registration;
+    }
 
 }
