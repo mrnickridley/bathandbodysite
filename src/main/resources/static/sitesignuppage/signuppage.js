@@ -154,8 +154,8 @@ function saveNewMember(){
       throw new Error("Password is required");
     }
 
-    //fetch('http://localhost:8095/memberinfo/signup'
-        fetch('/memberinfo/signup'
+    fetch('http://localhost:8095/memberinfo/signup'
+    //fetch('/memberinfo/signup'
         , {
         method: 'POST',
         headers: {

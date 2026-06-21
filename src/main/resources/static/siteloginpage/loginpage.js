@@ -103,8 +103,8 @@ function getMemberData(){
     let userName = document.getElementById('loginUsername').value;
     let passWord = document.getElementById('loginPassword').value;
 
-    //fetch("http://localhost:8095/memberinfo/signin"
-        fetch('/memberinfo/signin'
+    fetch("http://localhost:8095/memberinfo/signin"
+  //fetch('/memberinfo/signin'
             , {
   method: "POST",
   headers: {

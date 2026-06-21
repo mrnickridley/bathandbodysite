@@ -11,42 +11,48 @@ if (localStorage.getItem('memberUsername') !== null) {
 const checkoutPageBody = document.getElementById("checkoutPageBody");
 
 //Checkout Product Section Part of Checkout Page//
-const checkoutListCon= document.createElement('div');
+const checkoutListCon= document.createElement("div");
 checkoutListCon.className = "checkoutListCon";
 checkoutListCon.id = "checkoutListCon";
 
 checkoutPageBody.appendChild(checkoutListCon);
 
-const checkoutTable = document.createElement('table');
+const checkoutTable = document.createElement("table");
 checkoutTable.className = "checkoutTable";
 
 checkoutListCon.appendChild(checkoutTable);
 
-const checkoutTableBody = document.createElement('tbody');
+const checkoutTableBody = document.createElement("tbody");
 checkoutTableBody.className = "checkoutTableBody";
 
 checkoutTable.appendChild(checkoutTableBody);
 //Checkout Product Section Part of Checkout Page//
 
 //Proceed Checkout Button Part of Checkout Page//
-const proceedCheckoutButton = document.createElement('button');
+const proceedCheckoutButton = document.createElement("button");
 proceedCheckoutButton.textContent = "CHECKOUT";
 proceedCheckoutButton.id = "proceedCheckoutButton";
 proceedCheckoutButton.className = "proceedCheckoutButton";
 
 checkoutPageBody.appendChild(proceedCheckoutButton);
+
+// Make button always show pointer and accept clicks
+proceedCheckoutButton.style.cursor = 'pointer';
+proceedCheckoutButton.style.zIndex = '9999';
+proceedCheckoutButton.style.position = 'relative';
+proceedCheckoutButton.style.pointerEvents = 'auto';
 //Proceed Checkout Button Part of Checkout Page//
 
 //Total Price Part of Checkout Page//
-const totalPriceCon = document.createElement('div');
+const totalPriceCon = document.createElement("div");
 totalPriceCon.id = "totalPriceCon";
 totalPriceCon.className = "totalPriceCon";
 
-const totalPriceLabel = document.createElement('label');
+const totalPriceLabel = document.createElement("label");
 totalPriceLabel.className = "totalPriceLabel";
 totalPriceLabel.textContent = "Total: $";
 
-const totalPriceCount = document.createElement('span');
+const totalPriceCount = document.createElement("span");
 totalPriceCount.className = "totalPriceCount";
 
 totalPriceCon.appendChild(totalPriceLabel);
@@ -58,11 +64,23 @@ checkoutPageBody.appendChild(totalPriceCon);
 function createCheckout(){
   checkoutTableBody.innerHTML = "";
 
-  const getProductsForCheckout = JSON.parse(localStorage.getItem('checkoutProducts'));
+  //const getProductsForCheckout = JSON.parse(localStorage.getItem('checkoutProducts'));
+
+  let getProductsForCheckout = [];
+  try {
+    const raw = localStorage.getItem('checkoutProducts');
+    if (raw) {
+      getProductsForCheckout = JSON.parse(raw);
+      if (!Array.isArray(getProductsForCheckout)) getProductsForCheckout = [];
+    }
+  } catch (err) {
+    console.error('Failed to read/parse checkoutProducts from localStorage', err);
+    getProductsForCheckout = [];
+  }
 
   let totalPrice = 0;
 
-  getProductsForCheckout.forEach((item,index) => {
+  (getProductsForCheckout || []).forEach((item,index) => {
     const productRow = document.createElement("tr");
     productRow.setAttribute("data-index", index); // Add index as a data attribute
 
@@ -110,18 +128,20 @@ function createCheckout(){
             };
   });
 
-  totalPriceCount.textContent = totalPrice.toFixed(2);
+  //totalPriceCount.textContent = totalPrice.toFixed(2);
 
-  proceedCheckoutButton.onclick = function(){
-    //fetch('http://localhost:8095/paypalapi/createorder'
-    fetch('/paypalapi/createorder'
+  proceedCheckoutButton.addEventListener('click', function(e){
+    e.preventDefault();
+    const amount = parseFloat(totalPriceCount.textContent) || 0;
+    fetch('http://localhost:8095/paypalapi/createorder'
+    //fetch('/paypalapi/createorder'
       ,{
                 method:'POST',
                 headers: {
                     'Content-Type':'application/json'
                 },
                 body: JSON.stringify({
-                    amount: totalPrice.toFixed(2).toString(),
+                    amount: amount.toFixed(2).toString(),
                     currency: "USD"
                 })
             })
@@ -145,7 +165,7 @@ function createCheckout(){
             });
   }
 
-}
+)}
 //Function to create the checkout process after you click the "Checkout" Button//
 
 //Function to capture the checkout once order is complete//
@@ -156,8 +176,8 @@ function captureCheckout(){
     
     if(tokenId){
         // Make a POST request to capture the payment
-        //fetch(`http://localhost:8095/paypalapi/captureorder/${tokenId}`
-        fetch(`/paypalapi/captureorder/${tokenId}`
+        fetch(`http://localhost:8095/paypalapi/captureorder/${tokenId}`
+        //fetch(`/paypalapi/captureorder/${tokenId}`
           ,{
             method:'POST',
             headers: {

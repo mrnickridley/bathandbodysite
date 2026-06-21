@@ -159,8 +159,8 @@ public class payPalUserDataService {
                                                     }
                                                 ],
                                                     "application_context":{
-                                                        "return_url":"https://www.thebathandbodyemporium.com/sitecheckoutpage/checkoutpage.html",
-                                                        "cancel_url":"https://www.thebathandbodyemporium.com/sitecheckoutpage/checkoutpage.html",
+                                                        "return_url":"http://127.0.0.1:5500/src/main/resources/static/sitecheckoutpage/checkoutpage.html",
+                                                        "cancel_url":"http://127.0.0.1:5500/src/main/resources/static/sitecheckoutpage/checkoutpage.html",
                                                         "brand_name":"YourBrandName",
                                                         "landing_page":"LOGIN",
                                                         "user_action":"CONTINUE"

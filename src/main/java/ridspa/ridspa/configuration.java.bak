@@ -16,7 +16,7 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletResponse;
 
-/* 
+
 @Configuration
 public class configuration{
 
@@ -47,8 +47,10 @@ public class configuration{
             public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
                 if (response instanceof HttpServletResponse) {
                     HttpServletResponse httpResp = (HttpServletResponse) response;
+                    // Temporary CSP to allow PayPal SDK scripts to run.
+                    // Remove 'unsafe-eval' once you confirm the SDK no longer needs it.
                     String csp = "default-src 'self'; " +
-                            "script-src 'self'; " +
+                            "script-src 'self' https://www.paypal.com https://www.paypalobjects.com https://static.cloudflareinsights.com 'unsafe-eval'; " +
                             "connect-src 'self' https://api-m.paypal.com https://api-m.sandbox.paypal.com; " +
                             "style-src 'self' 'unsafe-inline'; " +
                             "img-src 'self' data: https://www.paypalobjects.com;";
@@ -62,4 +64,3 @@ public class configuration{
     }
 
 }
-*/

@@ -188,8 +188,8 @@ let productArrayFour = [];
 const existingProductData = [];
 
 function fetchProducts(){
-//fetch('http://localhost:8095/inventory/Accessories')  
-fetch('/inventory/Accessories')
+fetch('http://localhost:8095/inventory/Accessories')  
+//fetch('/inventory/Accessories')
 .then(response => {
     console.log("response object:", response)
     return response.json();
